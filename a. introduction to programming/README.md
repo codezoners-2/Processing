@@ -18,13 +18,13 @@
 <ul>
 	<li>Install Processing on your PC or laptop and fire it up!</li>
 	<li>Write code to draw <a href="http://artech.cc/wp-content/uploads/2013/12/homocentricRings.png">this</a> and <a href="http://artech.cc/wp-content/uploads/2014/09/house-300x454.png">this</a></li>
-    <li>Complete **bubbleTrace**</li>
-    <li>Complete **clickLine**</li>
-    <li>Complete **randomWalker**</li>
+    <li>Complete assignment: bubbleTrace </li>
+    <li>Complete assignment: clickLine </li>
+    <li>Complete assignment: randomWalker </li>
 </ul>
 
 ### Home
-* Complete **yourOwnPaiting**
+* Complete assignment: yourOwnPaiting
 
 ## reading 
 <ul>
