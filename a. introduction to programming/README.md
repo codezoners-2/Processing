@@ -12,9 +12,9 @@
 	<li>Great <a href="http://ultra-lab.net/blog/hello-world-processing-el-lanzamiento">documentary</a> on Processing (duration 40')</li>
 </ul>
 
-##assignments
+##coding
 
-###Lab
+### lab
 <ul>
 	<li>Install Processing on your PC or laptop and fire it up!</li>
 	<li>Write code to draw <a href="http://artech.cc/wp-content/uploads/2013/12/homocentricRings.png">this</a> and <a href="http://artech.cc/wp-content/uploads/2014/09/house-300x454.png">this</a></li>
@@ -23,7 +23,7 @@
     <li>Complete assignment: randomWalker </li>
 </ul>
 
-### Home
+### home
 * Complete assignment: yourOwnPaiting
 
 ## reading 
