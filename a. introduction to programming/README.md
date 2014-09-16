@@ -25,6 +25,7 @@
 
 #### home
 * Complete assignment: yourOwnPaiting
+* Complete assignment: yourOwnAnimation
 
 ### reading 
 <ul>
