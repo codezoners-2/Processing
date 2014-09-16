@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Introduction to programming, animation and generative art</title>
+
+		<meta name="description" content="class notes">
+		<meta name="author" content="Theodoros Papatheodorou">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/sky.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h2>Animation & Generative Art</h2>
+					<img width="400" height="400" src="assets/coverGraphic.png" alt="Meny">
+				</section>
+
+				<section>
+					<h2>Generative Art</h2>
+					<p>
+						<q>"Generative art refers to any art practice where the artist creates a process, such as a set of natural language rules, a computer program, a machine, or other procedural invention, which is then set into motion with some degree of autonomy contributing to or resulting in a completed work of art."
+							<p style="text-align:right"> -Philip Galanter</p>
+						</q>
+					</p>
+					<img src="assets/generativeArtwork1.png">
+					<img src="assets/generativeArtwork2.png">
+				</section>
+				
+				<section>
+					<h2>Programming vs. Art</h2>
+					<p>Generative Art is neither programming, nor art with the traditional definition...</p>
+					<ul>
+						<li><b>Programming:</b> the interface between man and machine. A logical exercise with clearly defined goals</li>
+						<li><b>Art:</b> emotional and subjective subject without a clear definition</li>
+						<li><b>Generative Art:</b> the point where the above meet. It takes strict, cold processes and uses them subversively in order to create illogical, unpredictable, expressive results</li>
+					</ul>
+					<img src="assets/generativeArtwork3.png">
+				</section>
+
+				<section>
+					<h2>setup + draw</h2>
+					<p>these functions are found at the heart of almost every program</p>
+					<pre><code data-trim contenteditable>
+void setup()
+{
+	// code that we only want to run 1 time goes here
+}
+void draw()
+{
+    // code that we want to be executed repeatedly goes here
+}
+					</code></pre>
+					<ul>
+						<li>this is how our software becomes dynamic</li>
+						<li>example: Space Invaders </li> <img width=40 height=40 src="assets/spaceInvaders1.png"> <img width=40 height=40 src="assets/spaceInvaders2.png"> <img width=40 height=40 src="assets/spaceInvaders3.png">
+						<li>where code is place affects when and how often it's going to be executed</li>
+						<ul>
+							<li>1 time: inside setup() - ideal for preparing our environment</li>
+							<li>many times: inside draw()</li>
+						</ul>
+					</ul>
+				</section>
+
+				<section>
+					<a class="image"> <img width="1024" height="768" src="assets/spaceInvadersBackground.jpg"></a>
+				</section>
+
+				<section>
+					<h2>setup + draw</h2>
+					<h3>scenario 1</h3>
+					<pre><code data-trim contenteditable> 
+void setup()
+{
+  size(500, 500);
+  background(255);
+}
+
+void draw()
+{
+  ellipse(mouseX, mouseY, 20, 20);
+}
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>setup + draw</h2>
+					<h3>scenario 2</h3>
+					<pre><code data-trim contenteditable> 
+void setup()
+{
+  size(500, 500);
+}
+
+void draw()
+{
+  background(255);
+  ellipse(mouseX, mouseY, 20, 20);
+}
+					</code></pre>
+				</section>
+
+
+				<section>
+					<h2>simple pencil</h2>
+					<pre><code data-trim contenteditable> 
+//github location: example-code/simplePencil
+void setup()
+{
+  size(500, 500);
+  background(255);
+}
+
+void draw()
+{
+  line(pmouseX, pmouseY, mouseX, mouseY);
+}
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>some events</h2>
+					<p>There are some events that are executed in certain conditions and the are called <b>event functions</b>:</p>
+					<ul>
+						<li><pCode>mousePressed()</pCode> - when a mouse button is pressed</li>
+						<li><pCode>keyPressed()</pCode> - when a keyboard button is pressed</li>
+						<li><pCode>mouseDragged()</pCode> - when the mouse is pressed and dragged</li>
+						<li><pCode>mouseMoved()</pCode> - when the mouse is draggged</li>
+					</ul>
+					</br>
+					</br>
+					<cLink><img align="left" width="30" height="30" src="assets/github_icon.png">simplePencilMousePressed</cLink>
+				</section>
+
+				<section>
+					<h2>variables</h2>
+
+					<ul>
+					<li>we can only run one command at a time so we need a place to store values until we need them again</li>
+					<li>they provide abstraction</li>
+					<li>I don't need to know the location of a value in memory. I just need to know its name</li>
+					<li>variables are at the heart of dynamic programs</li>
+					</ul>
+					<img src="assets/variableBucket.png">
+				</section>
+
+				<section>
+					<h2>our own variables</h2>
+					<h3>initializing:</h3>
+					<ul>
+					<li>definition: we give a name and type to a variable
+					<pre><code data-trim contenteditable> 
+float x;
+					</code></pre>					
+					</li>
+					<li>we assign a value
+<pre><code data-trim contenteditable> 
+x = 400;
+x = y * 2;
+x = abs(y);
+					</code></pre>
+					</li>
+					</ul>
+					<h3>using the variable</h3>
+					<pre><code data-trim contenteditable> 
+println(x);
+strokeWeight(x);
+strokeWeight(x/2);
+					</code></pre>
+				</section>
+
+			<section>
+					<h2>types of variables</h2>
+					<ul>
+					<li>for the machine to know how much memory to allocate</li>
+					<li>types:
+						<ul>
+							<li><pCode>int</pCode> = an integer like 1,2,3,4,5...etc</li>
+							<li><pCode>float</pCode> = a floating point number like 0.5, or 256.61</li>
+							<li><pCode>char</pCode> = a character like "a", "b", etc</li>
+						</ul>
+					<li>don't pick names that are Processing variables already</li>
+					</li>
+					</ul>
+			</section>
+
+			<section>
+					<h2>system variables</h2>
+					<ul>
+					<li>Processing already comes with some variables</li>
+					<li>we can't change their contents but we can read them</li>
+					<li>we have already seen <pCode>mouseX</pCode>, <pCode>mouseY</pCode>, <pCode>pmouseX</pCode></li>
+					<li>there are more:
+						<ul>
+							<li><pCode>width</pCode>, <pCode>height</pCode></li>
+							<li><pCode>frameCount</pCode>, <pCode>frameRate</pCode></li>
+							<li><pCode>displayWidth</pCode>, <pCode>displayHeight</pCode></li>
+							<li><pCode>mousePressed</pCode>, <pCode>keyPressed</pCode></li>
+							<li><pCode>key</pCode>
+						</ul>
+					</li>
+					</ul>
+					<cLink><img align="right-bottom" width="30" height="30" src="assets/github_icon.png"> key</cLink>
+			</section>
+
+				<section>
+					<h2>simple animation</h2>
+					<pre><code data-trim contenteditable> 
+// github location: /code-examples/simpleAnimation
+
+int circleX = 25;
+int circleY = 100;
+
+void setup()
+{
+     size(200, 200);
+     stroke(0);
+     fill(175);
+}
+void draw()
+{
+     background(255);
+     ellipse(circleX, circleY, 50, 50);
+     circleX = circleX + 1;
+}
+					</code></pre>
+					<ul>
+					<li>What does it do?</li>
+					<li>If we wanted to move along the y-axis what would we change?</li>
+					</ul>
+				</section>
+
+
+			</div>
+
+		</div>
+
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/lib/js/head.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/js/reveal.min.js");></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				width: 1100,
+				height: 850,
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
