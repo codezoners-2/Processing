@@ -101,6 +101,7 @@ void draw()
 					<h2>setup + draw</h2>
 					<h3>scenario 1</h3>
 					<pre><code data-trim contenteditable> 
+//github location: example-code/scenario1
 void setup()
 {
   size(500, 500);
@@ -118,6 +119,7 @@ void draw()
 					<h2>setup + draw</h2>
 					<h3>scenario 2</h3>
 					<pre><code data-trim contenteditable> 
+//github location: example-code/scenario2
 void setup()
 {
   size(500, 500);
@@ -160,7 +162,7 @@ void draw()
 					</ul>
 					</br>
 					</br>
-					<cLink><img align="left" width="30" height="30" src="assets/github_icon.png">simplePencilMousePressed</cLink>
+					<p><cLink>see: /code-examples/simplePencilMousePressed</cLink></p>
 				</section>
 
 				<section>
@@ -231,7 +233,8 @@ strokeWeight(x/2);
 						</ul>
 					</li>
 					</ul>
-					<cLink><img align="right-bottom" width="30" height="30" src="assets/github_icon.png"> key</cLink>
+					<p><cLink>see: /code-examples/key</cLink></p>
+					
 			</section>
 
 				<section>
@@ -244,15 +247,16 @@ int circleY = 100;
 
 void setup()
 {
-     size(200, 200);
-     stroke(0);
-     fill(175);
+	size(200,200);
+	stroke(0);
+	fill(0);
 }
+
 void draw()
 {
-     background(255);
-     ellipse(circleX, circleY, 50, 50);
-     circleX = circleX + 1;
+	background(255);
+	ellipse(circleX, circleY, 50, 50);
+	circleX = circleX + 1;
 }
 					</code></pre>
 					<ul>
@@ -260,7 +264,116 @@ void draw()
 					<li>If we wanted to move along the y-axis what would we change?</li>
 					</ul>
 				</section>
+			
+			
+				<section>
+					<h2>scope</h2>
+					<pre><code data-trim contenteditable> 
+int x = 8;		 // x is where the initial value is stored
+                  // and it has to be know between loops
+void setup()
+{
+	int y = 5;
+}
 
+void draw()
+{
+	ellipse(x,y,10,10); //y is unknown here
+}
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>on randomness</h2>
+					<ul>
+					<li>Generative art plays with randomness</li>
+					<li>types:
+						<ul>
+							<li>the artists gives the reigns to the user or to an algorithm</li>
+						</ul>
+					</li>
+					<li>But: what distinguishes generative artworks are the elements that the artists chose to still control</li>
+					<li>It's not about the number but the range of random/stochastic decisions that are allowed</li>
+					</ul>
+					<img width="400" height="300" src="assets/nodeGarden.png">
+					<p><a href="http://complexification.net/gallery/machines/nodeGarden/">Jared Tarbell’s Node Garden</a></p>
+				</section>
+			
+				<section>
+					<p>
+						<img align="left" src="assets/flightPatterns.png">
+							<li align="left">we express our uniqueness, but we also want to express chaos and allow properties our of our control to emerge</li>
+							</br>
+							<li align="left">generative artists are artists of chaos</li>
+							</br>
+							<li align="left"> <a href="http://www.aaronkoblin.com/work/flightpatterns/">Aaron Koblin's flight patterns</a></p>
+					</p>
+				
+				</section>
+
+				<section>
+					<h2>random vs. chaotic</h2>
+					<ul>
+						<li>complex systems often exhibit chaotic behavior</li>
+						<ul>
+							<li>ie. it's tricky to make predictions</li>
+						</ul>
+						<li>nevertheless they are deterministic (cause and effect)</li>
+						<li>non-linear dynamics - Butterfly effect</li>
+						<li>chaotic systems have a sense of history</li>
+						<ul>
+							<li>example: the weather</li>
+						</ul>
+						<li>in true random systems there is no history. All likely outcomes have equal chance of becoming true</li>
+					</ul>
+				
+				</section>
+
+				<section>
+					<h2>introducting random into our code</h2>
+					<pre><code data-trim contenteditable> 
+float random(3,5); // returns a number between 3 and 5
+					</code></pre>
+					<pre><code data-trim contenteditable> 
+float random(5); // returns a number between 0 and 5 (0 is implied)
+					</code></pre>
+					<p><cLink>see: /code-examples/random</cLink></p>
+				</section>
+
+				<section>
+					<h2>randomness in our sketches</h2>
+					<ul>
+						<li>the <pCode>random()</pCode> function returns a number. Think of it like a response.</li>
+						<li>casting
+					<pre><code data-trim contenteditable> 
+int number = random(0,100);          //WRONG!
+int number = (int) random(0,100);    //RIGHT!
+int number = int(random(0,100));	   //RIGHT!
+					</code></pre>
+					</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h2>debugging</h2>
+					<p>we can print a variable's value using <pCode>println()</pCode></p>
+					<ul>
+						<li>to print the variable's value:
+						<pre><code data-trim contenteditable> println(x); </code></pre>
+						</li>
+						<li>to print a string:
+						<pre><code data-trim contenteditable> println(“text”) </code></pre>
+						</li>
+						<li>string and number:
+						<pre><code data-trim contenteditable> println(“The value of x =” + x); </code></pre>
+						</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h2>comments</h2>
+					<p>“Any code of your own that you haven't looked at for six or more months, might as well have been written by someone else.” (Eagleson's law)</p>
+				</section>
 
 			</div>
 
