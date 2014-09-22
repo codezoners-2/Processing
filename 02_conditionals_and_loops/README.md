@@ -20,8 +20,6 @@
     you can use code from a previous week but the result should be significantly different
 
 </ul>
-* Complete assignment: yourOwnPaiting
-* Complete assignment: yourOwnAnimation
 
 ### reading assignments
 <ul>
