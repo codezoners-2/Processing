@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Conditional in Processing</title>
+
+		<meta name="description" content="class notes">
+		<meta name="author" content="Theodoros Papatheodorou">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/sky.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Conditionals</h1>
+					<img src="assets/conditionalsCartoon.png">
+				</section>
+				
+				<section>
+					<h2>conditionals</h2>
+					<h3>the core of programming</h3>
+					<iframe width="560" height="315" src="http://www.youtube.com/embed/Gtzvc_Aiyrw" frameborder="0" allowfullscreen></iframe>
+				</section>
+
+
+				<section>
+					<h2>simple animation</h2>
+					<p>what's the problem here?</p>
+					<p><img src="assets/simpleAnimation.png"></p>
+					<div class="codeRefCont">
+						<p class="codeRefText">simpleAnimation</p>
+						<img class="codeRefPic" src="assets/github_icon.png">
+					</div>
+				</section>
+				
+				
+				<section>
+					<h2>solution: conditional statements</h2>
+					<pre><code data-trim contenteditable>
+if ( ????? )
+{
+	// then run this code
+}
+					</code></pre>
+					<ul>
+						<li>blocks of code {}</li>
+						<li>we have already seen them in <pCode>draw</pCode>( ) & <pCode>setup</pCode>( )</li>
+					</ul>
+					<pre><code data-trim contenteditable>
+void draw()
+{
+	line(0,0, width, height);
+}
+					</code></pre>
+				</section>
+				
+				<section>
+					<h2>conditionals in <pCode>draw</pCode>()</h2>
+					<ul>
+						<li>we need them if:</li>
+						<ul>
+						<li>we run some commands some of the time and not others</li>						
+						<li>we need different behaviours depending on conditions</li>						
+						</ul>
+					</ul>
+					<pre><code data-trim contenteditable>
+void draw()
+{
+	if(??????)
+	{
+
+	}
+}
+					</code></pre>
+				</section>				
+				
+				<section>
+					<h2>George Boole</h2>
+					<h4>one of the (many) fathers of computer science</h4>
+					<div class="imgTextCont">
+							<img class="imgCont" src="assets/GeorgeBoole.png">
+							<div class="textCont">
+								<ul>
+									<li>Boole invented boolean algebra</li>
+									<li>instead of numbers like classic algebra, variables can only have one of two values:</li>
+									<ul>
+										<li> <font color="Green">TRUE</font></li>
+										<li> <font color="Red">FALSE</font></li>
+									</ul>
+								</ul>
+							</div>
+					</div>
+				</section>
+				
+				
+				<section>
+					<h2>boolean statements</h2>
+					<table class="myTable">
+						<tr>
+							<td>Socrates is dead</td>
+							<td><font color="Green">TRUE</font></td>
+						</tr>
+						<tr>
+							<td>Donkeys can fly</td>
+							<td><font color="RED">FALSE</font></td>
+						</tr>
+						<tr>
+							<td>15 greater than </td>
+							<td><font color="RED">FALSE</font></td>
+						</tr>
+						<tr>
+							<td>5 equals 5</td>
+							<td><font color="Green">TRUE</font></td>
+						</tr>
+					</table>
+					<img class="decorativeImgCont" width="200" height="200" src="assets/trueFalseSigns.png">
+				</section>
+				
+				<section>
+					<h2>relational operators</h2>
+					<h4>they allow us to evaluate the relationship between values</h4>
+					<table class="myTable">
+						<tr>
+							<td>></td>
+							<td>greater than</td>
+							<td>6>5</td>
+							<td class="fragment"> <font color="Green">TRUE</font></td>
+						</tr>
+						<tr>
+							<td><</td>
+							<td>smaller than</td>
+							<td>6<5</td>
+							<td class="fragment"> <font color="Red">FALSE</font></td>
+						</tr>
+						<tr>
+							<td>>=</td>
+							<td>greater or equal to</td>
+							<td>6>=6</td>
+							<td class="fragment"> <font color="Green">TRUE</font></td>
+						</tr>
+						<tr>
+							<td><=</td>
+							<td>smaller or equal to</td>
+							<td>6<=6</td>
+							<td class="fragment"> <font color="Green">TRUE</font></td>
+						</tr>
+						<tr>
+							<td>==</td>
+							<td>equal to</td>
+							<td>3==7</td>
+							<td class="fragment"> <font color="Red">FALSE</font></td>
+						</tr>
+						<tr>
+							<td>!=</td>
+							<td>not equal to</td>
+							<td>8!=8</td>
+							<td class="fragment"> <font color="Red">FALSE</font></td>
+						</tr>
+					</table>
+				</section>				
+				
+				<section data-background=rgb(255,100,100)>
+					<h2>equal sign danger!</h2>
+					<p>check if x is equal to y:</p>
+					<pre><code data-trim contenteditable>
+if (x == y)
+{ 
+}
+					</code></pre>
+					<p>make x equal to y:</p>
+					<pre><code data-trim contenteditable>
+x = y;
+					</code></pre>
+				</section>		
+				
+
+				<section>
+					<h2>conditional statements</h2>
+					<h3><pCode>if</pCode>( )</h3>
+					<pre><code data-trim contenteditable>
+if ( raining )	// evaluates statement
+{
+// if it's raining it runs the following code
+- take umbrella
+- take car
+} 
+					</code></pre>
+					<div class="fragment">
+						<p class="question">How how would we draw a rectangle when <pCode>mouseX</pCode> > 150 and a circle
+						      when <pCode>mouseX</pCode> < 150?
+						</p>
+					</div>
+						<div class="codeRefCont">
+							<p class="codeRefText">conditional1</p>
+							<img class="codeRefPic" src="assets/github_icon.png">
+						</div>
+				</section>		
+
+
+
+
+				<section>
+					<h2>conditional statements</h2>
+					<h3><pCode>if</pCode>( ) / <pCode>else if</pCode>( )</h3>
+					<pre><code data-trim contenteditable>
+if ( raining )	   	   
+{
+- take car		// executes this if raining
+}
+else if ( sunny )	  
+{
+- take bicycle      // this if sunny
+}
+					</code></pre>
+					<div class="codeRefCont">
+						<p class="codeRefText">conditional2</p>
+						<img class="codeRefPic" src="assets/github_icon.png">
+					</div>
+				</section>		
+
+
+				<section>
+					<h2>conditional statements</h2>
+					<h3><pCode>if</pCode>( ) / <pCode>else</pCode></h3>
+					<pre><code data-trim contenteditable>
+if ( raining )	   	   
+{
+- take car		// executes this if raining
+}
+else if ( sunny )	  
+{
+- take bicycle      // this if sunny
+}
+else
+{
+  - stay home		   // this for every other case
+}
+					</code></pre>
+					<div class="codeRefCont">
+						<p class="codeRefText">conditional3</p>
+						<img class="codeRefPic" src="assets/github_icon.png">
+					</div>
+				</section>		
+
+
+				<section>
+					<div class="imgTextCont">
+							<img class="imgCont" src="assets/ifElsePath.png">
+							<div class="textCont">
+								<h3>the <pCode>if</pCode>( ) / <pCode>else</pCode> path</h3>
+							</div>
+					</div>
+				</section>
+
+
+				<section>
+						<img src="assets/aButton.png">
+				</section>
+
+				<section>
+					<h2>! - && - ||</h2>
+					<h3>(not -  and  -  or)</h3>
+					<p>not</p>
+					<pre><code data-trim contenteditable>
+if ( !raining )			  // if it's not raining
+{			
+ - take bicycle
+}
+					</code></pre>
+					<p>and</p>
+					<pre><code data-trim contenteditable>
+// if it's raining and you can drive
+if ( raining && you have license ) 
+{
+- take car
+}
+					</code></pre>
+					<p>or</p>
+					<pre><code data-trim contenteditable>
+if (raining || snowing) // if it's raining or snowing
+{         
+    - wear jacket
+ }
+					</code></pre>
+				</section>		
+
+
+
+				<section>
+					<h2>programming a button</h2>
+					<div class="imgTextCont">
+							<img width="450" height="450" class="imgCont" src="assets/aButtonAnalyzed.png">
+							<div class="textCont">
+								<table>
+									<tr>
+										<td>x2 = </td>
+										<td>?</td>
+									</tr>
+									<tr>
+										<td>y2 = </td>
+										<td>?</td>
+									</tr>
+									<tr>
+										<td>x3 = </td>
+										<td>?</td>
+									</tr>
+									<tr>
+										<td>y3 = </td>
+										<td>?</td>
+									</tr>
+									<tr>
+										<td>x4 = </td>
+										<td>?</td>
+									</tr>
+									<tr>
+										<td>y4 = </td>
+										<td>?</td>
+									</tr>
+								</table>
+							</div>
+					</div>
+					<div class="codeRefCont">
+						<p class="codeRefText">simpleClick / smartClick</p>
+						<img class="codeRefPic" src="assets/github_icon.png">
+					</div>
+				</section>
+
+				<section>
+					<h2>drawable synthesizer</h2>
+					<h3>with a kinect camera</h3>
+					<iframe width="630" height="472" src="http://www.youtube.com/embed/7yuqMQWYVnM" frameborder="0" allowfullscreen></iframe>
+				</section>
+
+				<section>
+					<h2>drawable synthesizer</h2>
+					<h3>with a webcam</h3>
+					<iframe src="http://player.vimeo.com/video/42053193" width="700" height="393" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="http://vimeo.com/42053193">SketchSynth</a> from <a href="http://vimeo.com/bluekeyes">Billy Keyes</a>.</p>
+				</section>
+
+				<section>
+					<h2>simple animation</h2>
+					<p>how is it going to get back?</p>
+					<p><img src="assets/simpleAnimation.png"></p>
+					<p class="fragment">what about the y-axis?</p>
+					<div class="codeRefCont">
+						<p class="codeRefText">simplePhysics</p>
+						<img class="codeRefPic" src="assets/github_icon.png">
+					</div>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/lib/js/head.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/js/reveal.min.js");></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				width: 1100,
+				height: 850,
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
