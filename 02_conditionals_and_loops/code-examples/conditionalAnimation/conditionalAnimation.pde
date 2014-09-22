@@ -4,7 +4,6 @@ int circleY = 100;
 void setup()
 {
   size(200, 200);
-  noStroke();
   fill(255,0,0);
 }
 
