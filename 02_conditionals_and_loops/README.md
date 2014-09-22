@@ -1,6 +1,6 @@
 ## Conditionals and loops
 
-###coding
+###coding assignments
 
 #### lab
 <ul>
@@ -23,7 +23,7 @@
 * Complete assignment: yourOwnPaiting
 * Complete assignment: yourOwnAnimation
 
-### reading 
+### reading assignments
 <ul>
 	<li>From <a href="http://www.artech.cc/_class_material_/books/Getting_Started_with_Processing.pdf"> Getting started with Processing</a> read pages 60-71.</li>
 </ul>
