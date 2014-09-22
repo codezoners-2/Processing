@@ -81,15 +81,28 @@ img.codeRefPic {
 }
 
 img.decorativeImgCont {
-   position: relative;
-   right: -300px;
-   bottom: -100px;
+   position: absolute;
+   right: 0px;
+   bottom: -250px;
 }
 
 p.question {
    width: 60%;
    margin: 100px auto 10px auto;
    font-size: 80%;
+}
+
+p.customCodeBox {
+   width:100%;
+   text-align: left;
+   margin-top: 50px;
+   padding: 20px 20px 20px 20px;
+   font-family: Courier;
+   font-weight: bold;
+   background-color: rgb(200,200,200);
+   border-style: solid;
+   border-width: 2px;
+   border-radius: 30px;
 }
 /*********************************************
  * HEADERS
