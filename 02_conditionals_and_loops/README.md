@@ -1,6 +1,6 @@
 ## Conditionals and loops
 
-###coding
+###coding assignments
 
 #### lab
 <ul>
@@ -16,8 +16,10 @@
 		<li>make use of a for loop within another loop (aka nested loop) in order to draw something</li>
 		<li>you can use code from a previous week but the result should be significantly different</li>	
 	</ul>
+</ul>
 
-### reading 
+
+###reading assignments
 <ul>
 	<li>Read Golan Levin's essay <a href="http://www.flong.com/texts/essays/essay_4x4/">Beyond Photoshop with Code</a></li>
 	<li>From <a href="http://www.artech.cc/_class_material_/books/Getting_Started_with_Processing.pdf"> Getting started with Processing</a> read up until page 54. <b>Ignore</b> pg. 42-48 as they contain concepts we'll see later.</li>
