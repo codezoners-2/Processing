@@ -4,7 +4,8 @@
 
 #### lab
 <ul>
-	<li>Complete the assignments <strong>extendedPhysics</strong> and <strong>multipleButtons</strong></li>
+	<li><strong>conditionals:</strong>Complete the assignments <strong>extendedPhysics</strong>, <strong>multipleButtons</strong> and <strong>redZone</strong></li>
+	<li><strong>loops:</strong>Complete the assignment <strong>enlargedPixels</strong> </li>
 </ul>
 
 #### home
