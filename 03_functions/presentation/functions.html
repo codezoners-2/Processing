@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Functions</title>
+
+		<meta name="description" content="class notes">
+		<meta name="author" content="Theodoros Papatheodorou">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/sky.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Functions</h1>
+					<img src="assets/engine.png">
+						<h6 style="font-style: italic;">To iterate is human, to recurse is divine. - L. Peter Deutsch</h6>
+				</section>
+
+				<section data-background=rgb(100,255,100)>
+					<h2>any questions from last week?</h2>
+				</section>
+						
+				<section>
+					<a class="image"> <img width="1024" height="768" src="assets/spaceInvadersBackground.jpg"></a>
+				</section>
+						
+				<section>
+					<h2><img width="253" height="113" src="assets/spaceInvadersLogo.jpg"></h2>
+					<h2>in pseudocode</h2>
+					<ul>
+						<li>clear the canvas</li>
+						<li>draw the spaceship</li>
+						<li>draw the aliens</li>
+						<li>move the spaceship according to user instructions</li>
+						<li>move the aliens</li>
+						<li>check for injuries and update score</li>
+					</ul>
+				</section>	
+						
+				<section>
+					<h2><img width="253" height="113" src="assets/spaceInvadersLogo.jpg"></h2>
+					<h2>in Processing</h2>
+					<pre><code data-trim contenteditable>
+void draw()
+{
+  background(0);
+  drawSpaceship();
+  drawAliens();
+  moveSpaceship();
+  moveAliens();
+  checkInjuries();
+}
+					</code></pre>
+				</section>		
+						
+				<section>
+					<h2>why functions?</h2>
+					<table>
+						<tr><td><img width="70" height="70" src="assets/modularity.png"></td><td>modularity</td></td>
+						<tr><td><img width="75" height="60" src="assets/reusability.png"></td><td>reusability</td></tr>
+						<tr><td><img width="80" height="80" src="assets/easyChanges.png"></td><td>easy changes</td></tr>
+						<tr><td><img width="100" height="80" src="assets/savingBrainPower.png"></td><td>saving brain power</td><tr>
+						<tr><td><img width="70" height="70" src="assets/clarity.png"></td><td>clarity</td></tr>
+					</table>
+				</section>
+
+				<section>
+					<h2><img width="253" height="113" src="assets/spaceInvadersLogo.jpg"></h2>
+					<h2>visually</h2>
+					<img src="assets/pipeline.png">
+				</section>
+
+				<section>
+					<img width="800" height="800" src="assets/inputOutput.jpg">
+				</section>
+
+
+				<section>
+					<h2>functions: an old friend</h2>
+					<ul>
+						<li>week 1 - <pCode>line</pCode>( ) , <pCode>size</pCode>( )</li>
+						<li>week 1 - <pCode>mousePressed</pCode>( ) , <pCode>keyPressed</pCode>( )</li>
+						<li>week 2 - <pCode>void draw</pCode>( ) , <pCode>size</pCode>( )</li>						
+					</ul>
+					<h3></h3>
+					<h3>now we'll make our own!</h3>
+					<img class="decorativeImgCont" width="230" height="320" src="assets/wiredMag.png">
+				</section>
+
+				<section>
+					<h2>functions: definition</h2>
+					<p>	<img width="300" height="300" src="assets/inputOutput.jpg"></p>
+					<p class=customCodeBox>
+					<font color="Green">returnType </font> <font color="Red">functionName</font> ( <font color="Blue">arguments</font> ) <br/>
+					{ <br/><br/>
+
+					}
+					</p>
+					<div class="codeRefCont">
+						<p class="codeRefText">function1</p>
+						<img class="codeRefPic" src="assets/github_icon.png">
+					</div>
+				</section>
+
+				<section>
+					<h2>functions: types of</h2>
+					<ul>
+						<li>some take no parameters & do not return a value <br/>
+							<pCode>smooth</pCode>( )
+						</li>
+						<li>some take parameters & do not return a value <br/>
+							<pCode>line</pCode>( )
+						</li>
+						<li>some takes no parameters and return a value <br/>
+							<pCode>int</pCode> x = <pCode>millis</pCode>( );
+						</li>
+						<li>some take no parameters & do not return a value <br/>
+							<pCode>float</pCode> x = <pCode>random</pCode>( 0, 5);
+						</li>
+					</ul>
+					<div class="codeRefCont">
+						<p class="codeRefText">functionReturns</p>
+						<img class="codeRefPic" src="assets/github_icon.png">
+					</div>
+				</section>	
+
+				<section>
+					<h2><img width="250" height="210" src="assets/modularity.png"></h2>
+					<h2>modularity - advantages:</h2>
+					<ul>
+						<li>code organization</li>
+						<li>debugging</li>
+						<li>reducing code size</li>
+					</ul>
+					<div class="codeRefCont">
+						<p class="codeRefText">robot / robot_modular</p>
+						<img class="codeRefPic" src="assets/github_icon.png">
+					</div>
+				</section>	
+
+				<section>
+					<h2><img width="200" height="200" src="assets/commandments.png"></h2>
+					<h2>functions: the rules</h2>
+					<ul>
+						<li>we must pass the same number of parameters as declared in the definition of the function</li>
+						<li>the parameters must be the same type as in the definition of the function (int to int, float to float, etc)</li>
+						<li>we can give a value, a variable or even the result of a fuction to another function</li>
+						<li>variables declared within a function are known only locally</li>
+						<li>functions receive copies of the variables not the variables themselves</li>
+					</ul>
+					<div class="codeRefCont">
+						<p class="codeRefText">passing_a_copy</p>
+						<img class="codeRefPic" src="assets/github_icon.png">
+					</div>
+				</section>	
+
+				<section>
+					<h2>recursion</h2>
+					<img src="assets/dictionary.png">
+					<h6 style="font-style: italic;">“is a function where the solution to a problem depends on solutions to smaller instances of the same problem”</h6>
+				</section>
+
+
+				<section>
+					<h2>recursion (cont.)</h2>
+					<img width="320" src="assets/mirrors.png">
+					<h6 style="font-style: italic;">“Also: this is how we describe a setting in which objects repeat each other in self-similar ways (ie. mirrors facing each other)”</h6>
+				</section>
+
+
+				<section>
+					<h2>Droste effect</h2>
+					<div class="imgTextCont">
+							<img class="imgCont" height="500" src="assets/droste.jpg">
+							<div class="textCont">
+								The image contains a smaller copy of itself which in turn contains a smaller copy of itself etc...
+							</div>
+					</div>
+				</section>
+
+				<section>
+					<h2>Bjork - bachelorette</h2>
+					<iframe width="640" height="480" src="http://www.youtube.com/embed/qIgB9UG22bo?rel=0" frameborder="0" allowfullscreen></iframe>
+				</section>
+
+				<section>
+					<h3>(hilarious) recursive computing jokes</h3>
+					<img height="300" src="assets/gnu.png"></a>
+					<img style="margin-left:30px" height="300" src="assets/wine.jpg"></a>
+				</section>
+
+				<section>
+					<h2>recursion</h2>
+					<div class="imgTextCont">
+							<img class="imgCont" src="assets/recursiveCircles.png">
+							<div class="textCont">
+								a circle that contains a circle with half the radius, which contains a circle with half it's radius and so on...
+							</div>
+					</div>
+					<div class="codeRefCont">
+						<p class="codeRefText">recursion_circles</p>
+						<img class="codeRefPic" src="assets/github_icon.png">
+					</div>
+				</section>
+
+				<section>
+					<h2>fractals</h2>
+					<img width="400" src="assets/fractal.png">
+					<ul>
+						<li>from Latin “fractus” (broken)</li>
+						</li>shapes that repeat on many levels</li>
+						<li>these shapes don't even have to be the same on the different levels, as long as they share some similarity features</li>
+						<li>they exist everywhere in nature and they are a much more accurate way of describing many of it's phenomena</li>
+					</ul>
+				</section>
+
+				<section>
+					<img width="1024" height="768" src="assets/fractal2.png">
+				</section>
+
+				<section>
+					<img width="1024" height="768" src="assets/fractal3.png">
+				</section>
+
+				<section>
+					<h2>fractals in nature</h2>
+					<img src="assets/thibetMountains.png">
+					<h4>Thibet mountains</h4>
+				</section>
+
+				<section>
+					<h2>fractals in nature</h2>
+					<img src="assets/georgiaRivers.png">
+					<h4>rivers in Georgia</h4>
+				</section>
+
+				<section>
+					<h2>fractals in nature</h2>
+					<img height="600" src="assets/shell.png">
+					<img height="600" src="assets/snowFlake.png">
+				</section>
+
+				<section>
+					<h2>fractals in nature</h2>
+					<img width="40%" src="assets/thunder.png">
+					<img width="40%" src="assets/leaves.png">
+				</section>
+
+				<section>
+					<h2>edible fractals</h2>
+					<img width="40%" src="assets/romanescu.png">
+					<img width="40%" src="assets/broccoli.png">
+				</section>
+
+				<section>
+					<h2>the danger of infinity</h2>
+					<img width="40%" src="assets/cartoon.png">
+					<ul>
+						<li>a computer can't deal with infinity</li>
+						<li>one of the central problems of artificial intelligence: “does a problem have a solution or does it continue ad infinitum?”</li>
+					<pre><code data-trim contenteditable>
+int x = 1;
+while (x > 0)
+{x++;}
+					</code></pre>
+						<li>we can only simulate infinity</li>
+					</ul>
+					<div class="codeRefCont">
+						<p class="codeRefText">recursiveTree</p>
+						<img class="codeRefPic" src="assets/github_icon.png">
+					</div>
+				</section>
+
+
+			</div>
+
+		</div>
+
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/lib/js/head.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/js/reveal.min.js");></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				width: 1100,
+				height: 850,
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

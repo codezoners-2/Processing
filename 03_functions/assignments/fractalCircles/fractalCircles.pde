@@ -1,0 +1,26 @@
+void setup()
+{
+  size(600,600);
+  noLoop();
+}
+
+void draw()
+{
+  background(255);
+  stroke(0);
+  noFill();
+  drawCircle(width/2, height/2, 300);
+}
+
+void drawCircle(float x, float y, float diam)
+{
+  //STEP 1. DRAW AN ELLIPSE AT x,y WITH DIAMETER=diam
+
+  //STEP 2  WRITE AN IF STATEMENT WITH A RULE ABOUT WHEN TO STOP DRAWING ELLIPSES (HINT: USE THE diam VARIABLE)
+  {
+    //STEP 3. CALL THE drawCircle FUNCTION AGAIN TO DRAW ANOTHER CIRCLE ON THE RIGHT WITH DIAMETER = diam/2
+    //STEP 4. CALL THE drawCircle FUNCTION AGAIN TO DRAW ANOTHER CIRCLE ON THE LEFT WITH DIAMETER = diam/2
+    //STEP 5. CALL THE drawCircle FUNCTION AGAIN TO DRAW ANOTHER CIRCLE ON THE TOP WITH DIAMETER = diam/2
+    //STEP 6. CALL THE drawCircle FUNCTION AGAIN TO DRAW ANOTHER CIRCLE ON THE BOTTOM WITH DIAMETER = diam/2
+  }
+}
