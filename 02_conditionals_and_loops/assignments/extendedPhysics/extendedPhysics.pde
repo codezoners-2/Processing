@@ -8,7 +8,6 @@ void setup()
   size(300, 300);
   stroke(0);
   fill(175);
-  smooth();
 }
 
 void draw()
