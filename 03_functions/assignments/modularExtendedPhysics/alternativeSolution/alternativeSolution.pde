@@ -2,6 +2,8 @@ int circleX = 25;
 int circleY = 150;
 int stepX = 2;
 int stepY = 3;
+int dirX = 1;
+int dirY = 1;
 
 void setup()
 {
@@ -31,8 +33,8 @@ void drawBall(int x, int y)
 
 void moveBall()
 {
-  circleX =  circleX + stepX;
-  circleY = circleY + stepY;
+  circleX =  circleX + (stepX * dirX);
+  circleY = circleY + (stepY * dirY);
 }
 
 void bounceBall()
@@ -40,13 +42,13 @@ void bounceBall()
   if (circleX > width || circleX < 0)
   {
     fill(255, 0, 0);
-    stepX = stepX * -1;
+    dirX = dirX * -1;
   }
 
   if (circleY > height || circleY < 0)
   {
     fill(255, 0, 0);
-    stepY = stepY * -1;
+    dirY = dirY * -1;
   }
 }
 
@@ -54,21 +56,16 @@ void keyPressed()
 {
   if (key == 'f' || key == 'F')
   {
-    if (stepX>0) stepX =stepX + 1;
-    else stepX = stepX - 1;
-
-    if (stepY>0) stepY = stepY+1;
-    else stepY = stepY - 1;
+    stepX = stepX + 1;
+    stepY = stepY + 1;
   }
 
   if (key =='s' || key=='S')
   {
-    if (stepX>0) stepX=stepX - 1;
-    else stepX = stepX + 1;
-
-    if (stepY>0) stepY=stepY-1;
-    else stepY = stepY + 1;
+    stepX = stepX - 1;
+    stepY = stepY - 1;
   }
-  stepX = constrain(stepX, -10, 10);
-  stepY = constrain(stepY, -10, 10);
+
+  stepX = constrain(stepX, 1, 10);
+  stepY = constrain(stepY, 1, 10);
 }
