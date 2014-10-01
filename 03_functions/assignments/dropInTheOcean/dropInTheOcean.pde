@@ -36,7 +36,13 @@ void draw()
 void drawFish()
 {
   image(fishImg, fishLocX, fishLocY, 60, 49);
-  fishLocX=fishLocX-2; 
+  fishLocX=fishLocX-2;
+  
+  if ((millis()/1000) % 10 == 0) //divide by 1000 to convert milliseconds to seconds and then use % to start fish every 10 seconds.
+  {
+      fishLocX = width;
+      fishLocY = height-30;
+  }
 }
 
 
@@ -98,10 +104,4 @@ void keyPressed()
   dropR = random(255);
   dropG = random(255);
   dropB = random(255);
-  
-  if (key=='f')
-  {
-      fishLocX = width;
-      fishLocY = height-30;
-  }
 }

@@ -15,11 +15,11 @@ Write a program that does [this](http://artech.cc/_class_material_/exercises/acg
 10. Now that you are done with the above, move your code into the functions void drawDroplet(), void drawOcean().
 11. <strong>Bonus 1</strong>: make the sketch interactive. Every time the user presses the mouse button have a new droplet generated
 12. <strong>Bonus 2</strong>: have the droplet alternate randomly between 3 colour choices red, green and blue. Every time the droplet falls into the water it should change the sea water to its color.
-13. <strong>Unltra-Bonus</strong> (for those who want a challenge): use the fish.png image below and have it pass from left to right every 5 seconds after the water level is high enough. Some hints:
+13. <strong>Unltra-Bonus</strong> (for those who want a challenge): use the fish.png image below and have it pass from left to right every 10 seconds after the water level is high enough. Some hints:
 <ul>
-	<li>[How](http://processing.org/reference/image_.html) to load images<li>
-	<li>[How](http://processing.org/reference/millis_.html) to use the millis() to measure time. Divide by 1000 to find seconds.<li>
-	<li>You'll need to use the [modulo](http://processing.org/reference/modulo.html) to perform an action every x seconds.<li>	
+	<li>[How](http://processing.org/reference/image_.html) to load images</li>
+	<li>[How](http://processing.org/reference/millis_.html) to use the millis() to measure time. Divide by 1000 to find seconds.</li>
+	<li>You'll need to use the [modulo](http://processing.org/reference/modulo.html) to perform an action every 10 seconds.</li>	
 	<li>Put it all inside a "drawFish()" function.</li>
-<ul>
+</ul>
 <p><img width="100" src="fish.png"></p>
