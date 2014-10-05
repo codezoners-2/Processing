@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Arrays</title>
+
+		<meta name="description" content="class notes">
+		<meta name="author" content="Theodoros Papatheodorou">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/sky.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section>
+					<img width="1024" height="768" src="assets/birdFlock.png">
+					<classTitle style="position:absolute; bottom:40%; left:70%; font-size: 150%;">arrays</classTitle>
+					<classTitle style="position:absolute; bottom:10%; left:30%; font-size: 60%; text-align:right; margin-right:5%;">
+						“Should array indices start at 0 or 1?  My compromise of 0.5 was rejected without, I thought, proper consideration.”
+						<br/>
+						Stan Kelly-Bootle
+					</classTitle>
+				</section>
+
+				<section>
+					<h2>bird flocks</h2>
+					<div class="imgTextCont">
+							<img class="imgCont" src="assets/birdsArt.jpg" width="400";>
+							<div class="textCont">
+								<ul>
+									<li>individuals are not aware what the group is doing</li>
+									<li>there is no leader</li>
+									<li>the forms of the group are complex but they are based on a small number of simple rules on “bird level”:</li>
+									<ul>
+										<li>watch what your neighbours are doing</li>
+										<li>have a tendency towards the center</li>
+										<li>avoid incoming birds</li>
+									</ul>
+								</ul>
+							</div>
+					</div>
+				</section>
+
+
+				<section>
+					<h2>bird flocks</h2>
+					<iframe width="421" height="238" src="http://www.youtube.com/embed/eakKfY5aHmY?rel=0" frameborder="0" allowfullscreen></iframe>
+					<iframe width="320" height="240" src="http://www.youtube.com/embed/81wFZavdhPU?rel=0" frameborder="0" allowfullscreen></iframe>
+				</section>
+
+
+				<section>
+					<h2>emergence of complexity</h2>
+					<div class="imgTextCont">
+							<img class="imgCont" src="assets/bigFishLittleFish.png" width="400";>
+							<div class="textCont"  style="text-align:left; margin-left:20px;">
+								<ul>
+									<li>simple rule at a low level</li>
+									<li>organized complexity at higher levels</li>
+									<li>resembles the Aristotelian:</li>
+									<ul>
+										<li>“ἀλλ΄ ἔστι τι τὸ ὅλον παρὰ τὰ μόρια͵ ἔστι τι αἴτιον”</li>
+										<li>(the whole is greater than the sum of its parts)</li>
+									</ul>
+								</ul>
+							</div>
+					</div>
+					<p>Complex systems can appear which are based on a great number of simple/small interactions</p>
+				</section>
+
+				<section>
+					<h2>termite nest - 2 levels</h2>
+					<div class="imgTextCont">
+							<img class="imgCont" src="assets/termiteNest.png" width="300";>
+							<div class="textCont"  style="text-align:left; margin-left:20px;">
+							<p>an “organism” with clear and logical behaviors on two levels:</p>
+							<ul>
+								<li>termite level:</li>
+								<ul>
+									<li>each termite has its needs</li>
+									<li>each termite has its abilities</li>
+									<li>each termite reacts to pheromones that influence</li>
+									<li>its behaviors individually</li>
+								</ul>
+							</ul>
+							</div>
+					</div>
+				</section>
+
+				<section>
+					<h2>termite nest - 2 levels</h2>
+					<div class="imgTextCont">
+							<img class="imgCont" src="assets/termiteNest.png" width="300";>
+							<div class="textCont"  style="text-align:left; margin-left:20px;">
+							<ul>
+								<li>nest level - a city with:</li>
+								<ul>
+									<li>factory</li>
+									<li>defences</li>
+									<li>cleaning crews</li>
+								</ul>
+							</ul>
+							<p>Complex systems can appear which are based on a great number of simple/small interactions</p>
+							</div>
+					</div>
+				</section>
+
+				<section>
+					<h2>termite nest</h2>
+					<div class="imgTextCont">
+							<img class="imgCont" src="assets/termiteQueen.jpg" width="400";>
+							<div class="textCont">
+							<ul>
+								<li>not the result of macro-organization</li>
+								<ul>
+									<li>a queen is a queen only in name</li>
+									<li>no central planning</li>
+									<li>no hieararchy</li>
+								</ul>
+								<li>a by-product of the egoistic behaviours of individuals on a local level</li>
+								<li>sum of all these behaviours creates a complex macro-organism</li>
+								</ul>
+							</div>
+					</div>
+				</section>
+
+
+				<section>
+					<h2>consciousness</h2>
+					<div class="imgTextCont">
+							<img class="imgCont" src="assets/brainCell.jpg" width="400";>
+							<div class="textCont">
+							<ul>
+								<li>the perception that we have senses</li>
+								<li>the easy & hard problem of consciousness</li>
+								<ul>
+									<li>why aren't we zombies?</li>
+								</ul>
+									<li>it's all the result of emergence of complexity: </li>
+								<ul>
+									<li>coming from the interaction of neurons at a local (microscopic) level</li>
+								</ul>
+							</ul>
+							</div>
+					</div>
+				</section>
+
+
+				<section>
+					<h2>emergence in society</h2>
+					<div class="imgTextCont">
+							<img class="imgCont" src="assets/society.jpeg" width="400";>
+							<div class="textCont">
+							<ul>
+								<li>“far left” idea during the 50's</li>
+								<li>“visionary” during 1970-1990</li>
+								<li>today there are many examples of it on the internet and it's becoming more and more acceptable</li>
+								<ul>
+									<li>NSA wants to predict revolutions through Twitter</li>
+									<li>Google predicts flu spreads 15 days faster than the centers of disease control</li>
+									<li>Big Data</li>
+								</ul>
+							</ul>
+							</div>
+					</div>
+				</section>
+
+				<section>
+					<h2>Advantages of such systems</h2>
+					<div class="imgTextCont">
+							<img class="imgCont" src="assets/networkTypes.png" width="400";>
+							<div class="textCont">
+							<ul>
+								<li>breakup in smaller parts makes them immune to attacks and influence</li>
+								<li>examples:</li>
+								<ul>
+									<li>internet</li>
+									<li>Bittorrent vs. Napster</li>
+									<li>botnets</li>
+								</ul>
+							</ul>
+							</div>
+					</div>
+				</section>
+
+				<section>
+					<h2>emergence in art</h2>
+					<ul>
+						<li>a way of creating organic works of art</li>
+						<li>generative art</li>
+						<ul>
+							<li>simple logic rules lead to levels of complexity at a high level that make them visually appealing</li>
+						</ul>
+					</ul>
+					<img src="assets/emergenceInArt.png" width="2000";>
+				</section>
+				
+				<section>
+					<h2>unpredictability</h2>
+					<ul>
+						<li>up to now we do it with <pCode>random</pCode> ( )</li>
+						<li>there are more subtle ways</li>
+						<li>we could write simple algorithms that lead to unpredictable complexity</li>
+						<li>in programming we achieve it with the use of many agents (with arrays & object oriented programming)</li>
+					</ul>
+				</section>
+				
+				<section>
+					<img width="1024" height="768" src="assets/spaceInvadersBackground.jpg">
+				</section>
+
+				<section>
+					<h2>a variable in memory</h2>
+					<img width="400" src="assets/variable.png">
+				</section>
+
+				<section>
+					<h2>an array in memory</h2>
+					<img width="500" src="assets/array1.png">
+					<img width="500" src="assets/array2.png">
+				</section>
+
+				<section>
+					<h2>how do we declare an array?</h2>
+					<br/>
+					<h3><pCode>int</pCode>[ ]  myScores = <pCode>new int</pCode>[30];</h3>
+				</section>
+
+				<section>
+					<h2>...other examples</h2>
+					<pre><code data-trim contenteditable>
+float[] myGrades = new float[15];
+
+int[] myExpenses = new int[365];
+
+int number = 10;
+boolean[] mySwitches = new boolean[number];
+
+int pos = 5;
+float[] temperatures = new float[pos*5];
+					</code></pre>
+				</section>		
+
+				<section>
+					<h2>using an array</h2>
+					<pre><code data-trim contenteditable>
+float[] things = new float [4];
+things[0] = 5;
+things[1] = 1;
+things[2] = 3;
+things[3] = 10;
+					</code></pre>
+				</section>		
+
+				<section>
+					<h2>alternative initialization</h2>
+					<br/>
+					<h3><pCode>int</pCode>[ ] myScores = { 1 , 3 , 15 , 11 , 3 };</h3>
+					<br/>
+					<ul>
+						<li>we do not need to declare the number of positions</li>
+						<li>nor enter each value one-by-one</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>What do we do if we have an array with 10.000 elements?</h3>
+					<br/>
+					<pre><code data-trim contenteditable>
+float[] things = new float [4];
+things[0] = random(0,200);
+things[1] = random(0,200);
+things[2] = random(0,200);
+things[3] = random(0,200);
+.
+.
+.
+things[9999] = random(0,200);
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>we can use a <pCode>for</pCode>{ } loop</h2>
+					<br/>
+					<pre><code data-trim contenteditable>
+int[ ] circleX = new int[10000];
+
+for (int pos = 0; pos<10000; pos++)
+{
+     circleX[pos] = random(0,200);
+}
+					</code></pre>
+					<img class="decorativeImgCont" width="160" src="assets/aha.png">
+				</section>
+
+				<section>
+					<h2>bouncing balls</h2>
+					<img width="400" src="assets/bouncingBalls1.png">
+					<img width="400" src="assets/bouncingBalls2.png">
+					<div class="codeRefCont">
+						<p class="codeRefText">bouncing_ball / bouncing_ball_array</p>
+						<img class="codeRefPic" src="assets/github_icon.png">
+					</div>
+				</section>
+				
+				<section>
+					<h2>interaction with the mouse</h2>
+					<img width="700" src="assets/mouseInteraction.png">
+					<p>what is the value of “d” when the mouse is inside the circle?</p>
+					<p>State the if-statement.</p>
+					<pre class="fragment"><code data-trim contenteditable>
+if (dist (x1, y1, x2, y2) < w / 2)
+{
+	// run code when inside ellipse
+}
+					</code></pre>
+				</section>
+
+
+				<section>
+					<h2>interaction between elements</h2>
+					<img width="800" src="assets/interactionsBetweenBalls.png">
+					<p>What is the value of “d” when one ball touches the other?</p>
+					<p>State the if-statement.</p>
+					<pre class="fragment"><code data-trim contenteditable>
+if ( dist(x1,y1,x2,y2) < (w/2 + w/2) )
+{
+	// run code when inside ellipse
+}
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>value shifting on the array</h2>
+					<p>create an array and initialize the values</p>
+					<img width="400" src="assets/initializing.png">
+					<p>shift values at every frame</p>
+					<img width="800" src="assets/valueShifting.png">
+					<div class="codeRefCont">
+						<p class="codeRefText">ball snake (inside assignments)</p>
+						<img class="codeRefPic" src="assets/github_icon.png">
+					</div>
+				</section>
+
+				<section>
+					<h2>ball snake</h2>
+					<pre><code data-trim contenteditable>
+int[] xpos = new int[50]; 
+int[] ypos = new int[50];
+
+void setup()
+{
+    size(500, 500);
+    for (int i = 0; i < xpos.length; i++ )
+    {
+       xpos[i] = 0;
+       ypos[i] = 0;
+    }
+}
+					</code></pre>
+				</section>
+
+
+				<section>
+					<h2>myArray.length</h2>
+					<p>the variable <pCode>length</pCode> contains the size of the array</p>
+					<pre><code data-trim contenteditable>
+int[] xpos = new int[50];
+println(xpos.length); 		// it will print out 50
+					</code></pre>
+				<p>this way, we don't need to keep track of the size of the array as we did in previous examples.</p>
+				</section>
+
+				<section>
+					<h2>array functions</h2>
+					<p><pCode>concat</pCode>( )</p>
+					<p><pCode>append</pCode>( )</p>
+					<p><pCode>splice</pCode>( )</p>
+					<p><pCode>expand</pCode>( )</p>
+					<p>etc...</p>
+				</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+			</div>
+		</div>
+
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/lib/js/head.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/js/reveal.min.js");></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				width: 1100,
+				height: 850,
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
