@@ -1,4 +1,6 @@
-# Start with the code from bouncingBallArrayInteractive and make the following changes to simulate a Black Death scenario.
+# bouncingBallBlackDeath
+
+Start with the code from bouncingBallArrayInteractive and make the following changes to simulate a Black Death scenario.
 
 ## Step-by-step:
 
