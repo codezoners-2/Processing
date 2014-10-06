@@ -4,7 +4,7 @@ Use the code provided here to program interaction.
 
 ### step-by-step:
 1. Create an array of type float, called diamArray, which will hold the diameters of all the balls.
-2. Modify the setup() function so that you assign a random value between 3 and 30 to each ball's diameter. By this point when you start your program, you should see balls of different size.
+2. Modify the setup() function so that you assign a random value between 3 and 30 to each ball's diameter. Change your drawBall() function so that you use the random diameters of the balls. By this point when you start your program, you should see balls of different size.
 3. Create a global array, called ballState of type boolean (boolean = True/False), where you will store the state of each ball. Inside the for loop in the setup() intialize all the positions to True.
 4. Ammend your drawBall() function so that it draws the ball in white if it's corresponding location in the ballState array is True. If it is False make it draw the ball black. At this point you should see the same thing as in step 2 (ie. many white balls).
 5. Write an ballUserInteraction(x, y) function, called from the draw() function, which takes the position of the mouse as input parameters and checks if the mouse is on top of a ball or not. You'll need to use the dist() command as well as each ball's specific diameter from the array we created in step 1.
