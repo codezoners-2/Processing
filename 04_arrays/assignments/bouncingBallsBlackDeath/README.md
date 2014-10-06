@@ -17,6 +17,6 @@ Start with the code from bouncingBallArrayInteractive and make the following cha
 This will kill a sick ball with a likelyhood of 1 in 1000 in each iteraction of the draw() function.
 10. Ammend your 2nd if statement inside the for loops of the ballBallInteraction function so that only balls that are alive can infect others. Basically add one more && ballAlive[i]==true && ballAlive[j]==true.
 11. Inside the for loop of the cureBalls() function add an if statement which checks:
-11.a if the ballState of that ball is less than 255 (if it is still sick) &&
-11.b if random(1000)<1.
+  1. if the ballState of that ball is less than 255 (if it is still sick) &&
+  2. if random(1000)<1.
 If both of these conditionals are true then set ballAlive to false.
