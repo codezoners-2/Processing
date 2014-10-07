@@ -3,10 +3,13 @@ int[] xpos = new int[50];
 int[] ypos = new int[50];
 
 void setup() {
-  size(200,200);
+  size(500,500);
 
-  //insert STEP 1 here
-
+  for (int i=0; i<xpos.length; i++)
+  {
+     xpos[i] = 0; 
+     ypos[i] = 0;
+  }
 }
 
 void draw() {
