@@ -404,23 +404,131 @@ println(xpos.length); 		// it will print out 50
 
 				<section>
 					<h2>array functions</h2>
-					<p><pCode>concat</pCode>( )</p>
 					<p><pCode>append</pCode>( )</p>
+					<p><pCode>concat</pCode>( )</p>
+					<p><pCode>subset</pCode>( )</p>
 					<p><pCode>splice</pCode>( )</p>
 					<p><pCode>expand</pCode>( )</p>
 					<p>etc...</p>
 				</section>
 
+				<section>
+					<h2><pCode>append</pCode>( )</h2>
+					<pre><code data-trim contenteditable>
+String[] sa1 = { "OH", "NY", "CA"}; 
+String[] sa2 = append(sa1, "MA"); 
+println(sa2);
+// Prints updated array contents to the console:
+// [0] "OH"
+// [1] "NY"
+// [2] "CA"
+// [3] "MA"
+					</code></pre>
+				</section>
+
+				<section>
+					<h2><pCode>subset</pCode>( )</h2>
+					<pre><code data-trim contenteditable>
+String[] sa1 = { "OH", "NY", "CA", "VA", "CO", "IL" };
+String[] sa2 = subset(sa1, 1);
+println(sa2);
+// Prints the following array contents to the console:
+// [0] "NY"
+// [1] "CA"
+// [2] "VA"
+// [3] "CO"
+// [4] "IL"
+
+String[] sa3 = subset(sa1, 2, 3);
+println(sa3);
+// Prints the following array contents to the console:
+// [0] "CA"
+// [1] "VA"
+// [2] "CO"
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>using <pCode>subset</pCode>( ) to remove entries</h2>
+					<pre><code data-trim contenteditable>
+int extractedVal = 1;
+String[] original = { "OH", "NY", "CA", "VA", "CO", "IL" };
+String[] rightPart = subset(original, extractedVal+1);
+String[] leftPart = subset(original, 0, extractedVal);
+String[] result = concat(rightPart, leftPart);
+					</code></pre>
+				</section>
 
 
+				<section>
+					<h2>2-dimensional arrays</h2>
+					<h4>when would we need them?</h4>
+					<p>board game</p>
+					<img width="400" src="assets/chess.jpg">
+				</section>
 
+				<section>
+					<h2>2-dimensional arrays</h2>
+					<h4>when would we need them?</h4>
+					<p>image information (pixels)</p>
+					<img width="500" src="assets/pixel.gif">
+				</section>
 
+				<section>
+					<h2>2D arrays: an array of arrays</h2>
+					<p>1D array declaration:</p>
+					<pre><code data-trim contenteditable>
+int[] myArray = new int[10]; //a row with 10 entries
+					</code></pre>
+					<p>2D array declaration:</p>
+					<pre><code data-trim contenteditable>
+int cols = 10;
+int rows = 10;
+int[][] myArray = new int[rows][cols]; //10 rows with 10 places
+					</code></pre>
+				</section>
 
+				<section>
+					<h2>2D arrays: an array of arrays</h2>
+					<p>1D array use:</p>
+					<pre><code data-trim contenteditable>
+for (int i=0; i < myArray.length; i++)
+{
+	myArray[i] = 255;
+}
+					</code></pre>
+					<p>2D array use:</p>
+					<pre class="fragment"><code data-trim contenteditable>
+for (int i=0; i < cols; i++)
+{
+   for (int j=0; j < rows; j++)
+   {
+      myArray[i][j] = 255;
+   }
+}
+					</code></pre>
+				</section>
 
+				<section>
+					<h2>2-dimensional arrays visually</h2>
+					<img width="500" src="assets/2D_array.png">
+				</section>
 
-
-
-
+				<section>
+					<h2>sorting algorithms</h2>
+<ul>
+<li>an algorithm that puts elements of a list in a certain order</li>
+<li>since the dawn of computing, the sorting problem has attracted a great deal of research</li>
+<li>most-used orders are numerical order and lexicographical order</li>
+<li>efficient sorting is important for optimizing the use of other algorithms</li>
+<li>sorting algorithms are prevalent in introductory computer science classes</li>
+</ul>
+				</section>
+				
+				<section>
+					<h2>bubble sort algorithm</h2>
+<p>works by repeatedly stepping through the list to be sorted, comparing each pair of adjacent items and swapping them if they are in the wrong order</p>
+<iframe width="853" height="480" src="http://www.youtube.com/embed/lyZQPjUT5B4?rel=0" frameborder="0" allowfullscreen></iframe>					</section>
 
 
 			</div>
