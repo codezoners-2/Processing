@@ -14,3 +14,5 @@ Stay tuned!
 
 ###reading assignments
 From [Learning Processing](href="http://www.artech.cc/_class_material_/books/Learning_Processing.pdf) chapter 9.
+
+**copyright Theodoros Papatheodorou (contact@artech.cc)**

@@ -25,3 +25,5 @@
 	<li>From <a href="http://www.artech.cc/_class_material_/books/Getting_Started_with_Processing.pdf"> Getting started with Processing</a> read pg.60-71</li>
     <li>Alternatively, for a more in depth look into conditionals read chapter 5 from <a href="http://www.artech.cc/_class_material_/books/Learning_Processing.pdf">Learning Processing</a></li>
 </ul>
+
+**copyright Theodoros Papatheodorou (contact@artech.cc)**
