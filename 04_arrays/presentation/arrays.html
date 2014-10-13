@@ -451,11 +451,12 @@ println(sa3);
 				<section>
 					<h2>using <pCode>subset</pCode>( ) to remove entries</h2>
 					<pre><code data-trim contenteditable>
-int extractedVal = 1;
+int extractedVal = 2;
 String[] original = { "OH", "NY", "CA", "VA", "CO", "IL" };
 String[] rightPart = subset(original, extractedVal+1);
 String[] leftPart = subset(original, 0, extractedVal);
-String[] result = concat(rightPart, leftPart);
+String[] result = concat(leftPart, rightPart);
+println(result);
 					</code></pre>
 				</section>
 
