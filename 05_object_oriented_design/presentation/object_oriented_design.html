@@ -1,0 +1,426 @@
+<!doctype html>
+<!--ALL MATERIAL COPYRIGHT THEODOROS PAPATHEODOROU contact@artech.cc-->
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>object oriented design</title>
+
+		<meta name="description" content="class notes">
+		<meta name="author" content="Theodoros Papatheodorou">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/sky.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section>
+					<h2>object oriented design</h2>
+					<img height="500" src="assets/oop.jpg">
+					<h6 style="font-style: italic; text-align:right;">
+						“The great thing about Object Oriented code is that it can make small, simple problems look like large, complex ones.”
+						<br/>
+						- unknown
+					</h6>
+					<p style="text-align:left; font-size: 50%;">&copy; Theodoros Papatheodorou</p>
+				</section>
+
+				<section>
+					<h2>objection oriented design</h2>
+					<h3>a conceptual leap forward</h3>
+					<ul>
+						<li>it's a conceptual change in how we program</li>
+						<li>we won't learn new computing techniques, we just change the way we think and organize our code</li>
+						<li>objects around us have properties and behaviors</li>
+					</ul>
+					<img class="decorativeImgCont" width="250" src="assets/classes.png">
+				</section>
+
+				<section>
+					<h2>class Ball</h2>
+					<table>
+						<thead>
+							<tr>
+								<th><img height="300" src="assets/ball.gif"></th>
+								<th><img height="300" src="assets/bouncingBall.gif"></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><b>properties</b></td>
+								<td><b>behaviors</b></td>
+							<tr>
+							<tr>
+								<td>shape</td>
+								<td>movement</td>
+							<tr>
+							<tr>
+								<td>color</td>
+								<td>bounce</td>
+							<tr>
+							<tr>
+								<td>weight</td>
+								<td>inflating</td>
+							<tr>
+							<tr>
+								<td>material</td>
+								<td>deflating</td>
+							<tr>
+							<tr>
+								<td>content</td>
+								<td>blowing up</td>
+							<tr>
+						</tbody>
+					</table>
+				</section>
+
+
+				<section>
+					<h2>class vs. object</h2>
+					<table>
+						<thead>
+							<tr>
+								<th>class</th>
+								<th>object</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>phone</td>
+								<td>iphone 4G, Samsung Galaxy, HTC N1</td>
+							<tr>
+							<tr>
+								<td>computer</td>
+								<td>lenovo z61m, DELL 1120, </td>
+							<tr>
+							<tr>
+								<td>singer</td>
+								<td>Leonard Cohen, JayZ, Lennon, Brel</td>
+							<tr>
+							<tr>
+								<td>mountain</td>
+								<td>Everest, Olympus</td>
+							<tr>
+							<tr>
+								<td>human</td>
+								<td>Socrates, Darwin, Freud</td>
+							<tr>
+							<tr>
+								<td>country</td>
+								<td>France, Germany, Iceland, UK</td>
+							<tr>
+							<tr>
+								<td>painter</td>
+								<td>Dali, Pollock, Van Gogh</td>
+							<tr>
+						</tbody>
+					</table>
+				</section>
+
+
+				<section>
+				<h2>objects in Processing</h2>
+				<ul>
+					<li>class vs. object (Ball vs. myBeachBall)</li>
+					<li>myBeachBall is a example of an object with:</li>
+					<ul>
+						<li>properties → variables in Processing</li>
+						<li>behaviors → functions in Processing</li>
+					</ul>
+				</ul>
+				</section>
+
+				<section>
+					<h2>class Ball</h2>
+					<table>
+						<thead>
+							<tr>
+								<th><img height="300" src="assets/ball.gif"></th>
+								<th><img height="300" src="assets/bouncingBall.gif"></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><b>properties</b></td>
+								<td><b>behaviors</b></td>
+							<tr>
+							<tr>
+								<td>shape</td>
+								<td>movement</td>
+							<tr>
+							<tr>
+								<td>color</td>
+								<td>bounce</td>
+							<tr>
+							<tr>
+								<td>weight</td>
+								<td>inflating</td>
+							<tr>
+							<tr>
+								<td>material</td>
+								<td>deflating</td>
+							<tr>
+							<tr>
+								<td>content</td>
+								<td>blowing up</td>
+							<tr>
+						</tbody>
+					</table>
+				</section>
+
+
+				<section>
+				<h2>bouncingColorBall</h2>
+				<h4>in pseudocode</h4>
+				<img height="500" src="assets/bouncingBall_in_pseudocode.png">
+				<div class="codeRefCont">
+					<p class="codeRefText">bouncingColorBall</p>
+					<img class="codeRefPic" src="assets/github_icon.png">
+				</div>
+				</section>
+				
+				<section>
+				<h2>bouncingColorBall with OOP</h2>
+				<h4>in pseudocode</h4>
+				<img height="500" src="assets/bouncingBall_OOP_in_pseudocode.png">
+				<div class="codeRefCont">
+					<p class="codeRefText">bouncingColorBall_OOP</p>
+					<img class="codeRefPic" src="assets/github_icon.png">
+				</div>
+				</section>
+
+				<section>
+				<h2>a class has</h2>
+				<ul>
+					<li>a name</li>
+					<li>variables</li>
+					<li>constructor</li>
+					<li>functions</li>
+				</ul>
+				</section>
+
+
+				<section>
+					<a href="assets/algorithmic_v_OOP.png"><img height="500" src="assets/algorithmic_v_OOP.png"></a>
+				</section>
+				
+				
+				<section>
+				<h2>bouncingColorBalls</h2>
+				<h4>using arrays and OOP</h4>
+				<div class="codeRefCont">
+					<p class="codeRefText">bouncingColorBallArray / bouncingColorBallArray_OOP</p>
+					<img class="codeRefPic" src="assets/github_icon.png">
+				</div>
+				</section>
+
+
+				<section>
+				<h2>writing a class</h2>
+				<ul>
+					<li>a name (usually first letter upper case)</li>
+					<li>variables</li>
+					<li>constructor</li>
+					<li>functions</li>
+				</ul>
+				<p>Attention: variables, constructor and functions are written inside the curly brackets of the class!</p>
+					<pre><code data-trim contenteditable>
+class Ball
+{
+	// here
+}
+					</code></pre>
+				</section>
+				
+
+				<section>
+					<h2>placing the class</h2>
+					<p>either under our program</p>
+					<pre><code data-trim contenteditable>
+void setup()
+{
+	
+}
+
+void draw()
+{
+	
+}
+
+class Ball
+{
+
+}
+					</code></pre>
+				</section>
+				
+
+				<section>
+				<h2>placing the class</h2>
+				<p>or in a separate tab</p>
+				<img height="500" src="assets/tab.png">
+				</section>
+
+
+				<section>
+				<p><strong>Question:</strong> How do we create objects with different starting characteristics without using <pCode>random</pCode>()?</p>
+				<div class=fragment>
+					<p><strong>Answers:</strong> Using the constructor with parameters.</p>
+					<div class="codeRefCont">
+						<p class="codeRefText">bouncingColorBall_OOP_Parameters / bouncingColorBallArray_OOP_Parameters</p>
+						<img class="codeRefPic" src="assets/github_icon.png">
+					</div>
+				</div>
+				</section>
+
+
+
+				<section>
+					<h2>using Classes within Classes</h2>
+					<pre><code data-trim contenteditable>
+class Bicycle
+{
+  Tyre tyreLeft;
+  Tyre tyreRight;
+
+  Bicycle()
+  {
+    tyreLeft = new Tyre();
+    tyreRight = new Tyre();
+  }
+     
+  void rideBike()
+  {
+    tyreLeft.turn();
+    tyreRight.turn();
+  }
+}
+					</code></pre>
+				</section>
+
+
+				<section>
+					<h2>space invaders with Classes</h2>
+					<p><img class="imgCont" src="assets/spaceInvadersLogo.jpg" width="300";></p>
+					<pre><code data-trim contenteditable>
+class Spaceship
+{ 
+  int variable1;
+  int variable2;
+ 
+  void hit(Bullet b)
+  {
+    // check if Bullet b has hit the Spaceship
+  }
+}
+					</code></pre>
+				</section>
+
+
+				<section>
+					<h2>why OOP?</h2>
+					<p>1. To break the problem into smaller, manageable pieces (modularity).</p>
+					<img height="200" src="assets/modularity.png">
+				</section>
+
+				<section>
+					<h2>why OOP?</h2>
+					<p>2. In order to make our code more understandable by taking about objects and behaviors (abstraction).</p>
+					<img height="200" src="assets/abstraction.png">
+				</section>
+
+				<section>
+					<h2>why OOP?</h2>
+					<p>3. So that we can combine the parts into a new system (composability).</p>
+					<img height="200" src="assets/composability.png">
+				</section>
+
+				<section>
+					<h2>why OOP?</h2>
+					<p>4. So that it's easier to maintain and extend our code (continuity).</p>
+					<img height="200" src="assets/continuity.png">
+				</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			</div>
+		</div>
+
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/lib/js/head.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/js/reveal.min.js");></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				width: 1100,
+				height: 850,
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'http://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
