@@ -1,4 +1,5 @@
 # spaceInvaders
+### copyright Theodoros Papatheodorou (contact@artech.cc)
 
 Start with the code structure provided, keep the names I propose and remember the first commandment: "incremental development".
 
